@@ -1,59 +1,61 @@
-#include<bits/stdc++.h>
+//Normal Queue using Linked List
+#include <bits/stdc++.h>
 using namespace std;
 
-struct Node 
+struct Node
 {
 	int data;
 	Node *next;
 };
 
-Node *front=NULL,*rear=NULL;
+Node *front = NULL, *rear = NULL;
 
-
+//Printing the elements
 void print()
 {
-	Node *temp=front;
-	while(temp!=NULL)
+	Node *temp = front;
+	while (temp != NULL)
 	{
-		cout<<temp->data<<" ";
-		temp=temp->next;
+		cout << temp->data << " ";
+		temp = temp->next;
 	}
-	cout<<endl;
-
+	cout << endl;
 }
 
+//Inserting elements Normally from the end
 void push(int x)
 {
-	Node* t=new Node();
-	t->data=x;
-	t->next=NULL;
-	if(front==NULL && rear==NULL)
-		front=t;
+	Node *t = new Node();
+	t->data = x;
+	t->next = NULL;
+	if (front == NULL && rear == NULL)
+		front = t;
 	else
-		rear->next=t;
-	rear=t;
+		rear->next = t;
+	rear = t;
 }
 
+//Always popping the first element
 void pop()
 {
-	if(front==NULL)
+	if (front == NULL)
 		return;
-	if(front==rear)
+	if (front == rear)
 	{
-		front=rear=NULL;
+		front = rear = NULL;
 		return;
 	}
-	Node *t=front;
-	front=front->next;
+	Node *t = front;
+	front = front->next;
 	free(t);
 }
 int main()
 {
 	int n;
-	cout<<"Enter the number of elements:"<<endl;
-	cin>>n;
-	for(int i=1;i<=n;i++)
-	{	
+	cout << "Enter the number of elements:" << endl;
+	cin >> n;
+	for (int i = 1; i <= n; i++)
+	{
 		push(i);
 	}
 	print();
@@ -62,4 +64,3 @@ int main()
 	print();
 	return 0;
 }
-
