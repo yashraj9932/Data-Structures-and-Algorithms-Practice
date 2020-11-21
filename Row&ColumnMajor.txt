@@ -1,0 +1,22 @@
+When elements is in Row Major format
+
+Address of A[I][J] = Base Address + W * ( C * I + j)
+
+Where Base Address is the address of the first element in an array.
+
+W= is the weight (size) of a data type.
+C= is Total No of Columns.
+I= is the Row Number
+J= is Column Number of an element whose address is to find out.
+
+
+When Elements is in Column Format
+
+Address of A[I][J] = Base Address + W * ( R * J + I)
+
+Where Base Address is the address of the first element in an array.
+
+W= is the weight (size) of a data type.
+R= is Total No of Rows.
+I= is the Row Number
+J= is Column Number of an element whose address is to find out.
